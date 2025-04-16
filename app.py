@@ -135,7 +135,7 @@ with col2:
         st.session_state.running = False
         st.session_state.status_message = "Tracking stopped by user."
         st.session_state.error_message = None
-        st.experimental_rerun()
+        st.rerun()
 
 # --- Display Status and Errors ---
 if st.session_state.error_message:
@@ -212,14 +212,14 @@ if st.session_state.running:
         st.session_state.status_message = f"✅ Location acquired ({current_location['latitude']:.4f}, {current_location['longitude']:.4f}). Searching Wikipedia..."
         if not st.session_state.get('status_updated', False):
             st.session_state.status_updated = True
-            st.experimental_rerun()
+            st.rerun()
 
     elif location_data and 'error' in location_data:
         st.session_state.error_message = f"🚫 Geolocation Error: {location_data['error']['message']} (Code: {location_data['error']['code']}). Tracking stopped."
         st.session_state.status_message = "Tracking stopped due to location error."
         st.session_state.running = False
         st.session_state.status_updated = False
-        st.experimental_rerun()
+        st.rerun()
 
     # 2. Search Wikipedia & Trigger Summaries (if location obtained and status updated)
     if current_location and st.session_state.get('status_updated', False):
