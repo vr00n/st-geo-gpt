@@ -249,7 +249,7 @@ if st.session_state.running:
         countdown_placeholder.empty()
 
         st.session_state.status_updated = False
-        st.experimental_rerun()
+        st.rerun()
 
     elif not location_data and st.session_state.running:
          st.session_state.status_message = "⏳ Waiting for browser location permission/data..."
