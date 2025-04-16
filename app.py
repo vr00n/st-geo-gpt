@@ -198,7 +198,7 @@ with results_placeholder:
 # --- Main Execution Loop ---
 if st.session_state.running:
     # 1. Get Location
-    location_data = streamlit_geolocation(key='geoloc')
+    location_data = streamlit_geolocation() # Corrected line
 
     current_location = None
     if location_data and 'latitude' in location_data and 'longitude' in location_data:
