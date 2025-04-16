@@ -120,6 +120,7 @@ Also, frequent AI summaries may incur OpenAI API costs.
 # --- Control Buttons ---
 col1, col2 = st.columns(2)
 with col1:
+    # Inside the "Start Tracking" button logic:
     if st.button("🚀 Start Tracking", disabled=st.session_state.running, use_container_width=True):
         st.session_state.running = True
         st.session_state.status_message = "Initiating location tracking..."
@@ -127,7 +128,7 @@ with col1:
         st.session_state.last_results = []
         st.session_state.last_location = None
         st.session_state.summaries = {} # Clear summaries on start
-        st.experimental_rerun()
+        st.rerun()                 # New line
 
 with col2:
     if st.button("🛑 Stop Tracking", disabled=not st.session_state.running, use_container_width=True):
