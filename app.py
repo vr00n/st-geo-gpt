@@ -249,6 +249,7 @@ if st.session_state.running:
         countdown_placeholder.empty()
 
         st.session_state.status_updated = False
+        st.write("State before final rerun:", st.session_state) # Add this line
         st.rerun()
 
     elif not location_data and st.session_state.running:
