@@ -7,7 +7,7 @@ import openai # Import OpenAI library
 
 # --- Configuration ---
 WIKIPEDIA_API_URL = "https://en.wikipedia.org/w/api.php"
-SEARCH_RADIUS_METERS = 1500
+SEARCH_RADIUS_METERS = 250
 REFRESH_INTERVAL_SECONDS = 30
 
 # --- Check for OpenAI API Key ---
